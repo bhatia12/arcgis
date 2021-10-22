@@ -3,7 +3,6 @@ import { Card, Button, Col, Row } from 'react-bootstrap';
 import Compass from "@arcgis/core/widgets/Compass";
 
 import { loadModules } from 'esri-loader'
-
 interface Props {
 
 }
@@ -80,7 +79,7 @@ const Map = ({ }: Props): ReactElement => {
 
             function showAddress(address: any, pt: any) {
                 view.popup.open({
-                    title:  + Math.round(pt.longitude * 100000)/100000 + ", " + Math.round(pt.latitude * 100000)/100000,
+                    title: + Math.round(pt.longitude * 100000) / 100000 + ", " + Math.round(pt.latitude * 100000) / 100000,
                     content: address,
                     location: pt
                 });
@@ -116,10 +115,10 @@ const Map = ({ }: Props): ReactElement => {
     return (
         <>
             <Card>
-                <Card.Header>
+                <Card.Header className="bg-primary">
                     <Row>
-                        <Col md={4}>ArcGis Map</Col>
-                        <Col md={{ span: 4, offset: 4 }} className="text-end"> <Button onClick={onclick} variant="secondary">Base Map Toggle</Button></Col>
+                        <Col className="text-white mb-0" md={4}>ArcGis Map</Col>
+                        <Col md={{ span: 4, offset: 4 }} className="text-end"> <Button onClick={onclick} variant="success">Base Map Toggle</Button></Col>
                     </Row>
                 </Card.Header>
                 <Card.Body>
